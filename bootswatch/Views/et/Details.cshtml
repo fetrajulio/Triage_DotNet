@@ -1,0 +1,30 @@
+﻿@model bootswatch.Models.Etudiant
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Etudiant</legend>
+
+    <div class="display-label">Nom_Et</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Nom_Et)
+    </div>
+
+    <div class="display-label">Classe</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Classe)
+    </div>
+
+    <div class="display-label">Age_et</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Age_et)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id_Et }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

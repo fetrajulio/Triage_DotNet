@@ -1,0 +1,60 @@
+﻿@model IEnumerable<bootswatch.Models.Etudiant>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<p>
+    
+</p>
+
+<div class="container">
+  <div class="row">
+    <div class="col-1">
+      
+    </div>
+    <div class="col-10">
+      <div class="card bg-secondary mb-3">
+        <div class="card-header">
+            
+            <div class="row">
+                <div class="col-10">Etudiants</div>
+                <div class="col"><button type="button" class="btn btn-secondary">@Html.ActionLink("Create New", "Create")</button></div>
+            </div>
+        </div>
+          <div class="card-body">
+                <table class="table table-hover">
+                      <thead>
+                        <tr>
+                          <th scope="col">Nom</th>
+                          <th scope="col">Classe</th>
+                          <th scope="col">Age</th>
+                          <th scope="col"></th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                           @foreach (var item in Model) {
+                              <tr>
+                                  <th scope="row">@Html.DisplayFor(modelItem => item.Nom_Et)</th>
+                                  <td>@Html.DisplayFor(modelItem => item.Classe)</td>
+                                  <td>@Html.DisplayFor(modelItem => item.Age_et)</td>
+                                  <td>
+                                      @Html.ActionLink("Edit", "Edit", new { id=item.Id_Et }) |
+                                      @Html.ActionLink("Details", "Details", new { id=item.Id_Et }) |
+                                      @Html.ActionLink("Delete", "Delete", new { id=item.Id_Et })
+                                  </td>
+                                </tr>
+                           }
+                          <div class="col"><button type="button" class="btn btn-secondary">@Html.ActionLink("Trier", "tr")</button></div>
+                      </tbody>
+                </table>
+          </div>
+        </div>
+    </div>
+    <div class="col-1">
+      
+    </div>
+  </div>
+</div>
+
+
