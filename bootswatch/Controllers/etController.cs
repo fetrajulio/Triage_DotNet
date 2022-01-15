@@ -16,7 +16,7 @@ namespace bootswatch.Controllers
         private fonctionRep fr = new fonctionRep();
         //
         // GET: /et/
-
+        
         public ViewResult Index()
         {
             return View(db.Etudiants.ToList());
@@ -94,6 +94,13 @@ namespace bootswatch.Controllers
 
         //
         // POST: /et/Delete/5
+        public ActionResult search() {
+            string mots = Request.Form["tt"];
+            ViewBag.mots = mots;
+            Etudiant et = fr.getEtByNom(mots);
+            ViewBag.et = et;
+            return RedirectToAction("details", new { id = et.Id_Et });
+        }
 
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(int id)

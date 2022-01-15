@@ -12,7 +12,17 @@ namespace bootswatch.repositories
     {
         EtudiantDBContext BaseDD = new EtudiantDBContext();
 
-
+        public Etudiant getEtByNom(string nom) {
+            Etudiant[] table = BaseDD.Etudiants.ToArray();
+            Etudiant res=new Etudiant();
+            foreach (Etudiant et in table) {
+                if (et.Nom_Et == nom)
+                    res = et;
+                else  if (et.Classe == nom)
+                    res = et;
+            }
+            return res;
+        }
         public Etudiant[] Trier()
         {
             Etudiant[] table = BaseDD.Etudiants.ToArray();
