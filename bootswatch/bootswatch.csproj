@@ -222,6 +222,7 @@
     <Content Include="Views\et\Delete.cshtml" />
     <Content Include="Views\et\tr.cshtml" />
     <Content Include="Views\et\search.cshtml" />
+    <Content Include="Views\et\sqlTest.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

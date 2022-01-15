@@ -1,0 +1,8 @@
+﻿@{
+    ViewBag.Title = "sqlTest";
+}
+
+<h2>sqlTest</h2>
+@foreach (bootswatch.Models.Etudiant et in ViewBag.etds) {
+    <p>@Html.DisplayFor(modelItem => et.Classe)</p>
+}

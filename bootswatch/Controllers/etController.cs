@@ -110,7 +110,11 @@ namespace bootswatch.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
-
+        public ActionResult sqlTest() {
+            Etudiant[] etds = fr.getAll();
+            ViewBag.etds = etds;
+            return View();
+        }
         protected override void Dispose(bool disposing)
         {
             db.Dispose();
